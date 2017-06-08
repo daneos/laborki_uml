@@ -7,15 +7,15 @@
 class ComplexShape : public Shape
 {
 protected:
-	Shape *left;
-	Shape *right;
-	Operation op;
+	const Shape *left;
+	const Shape *right;
+	const Operation op;
 
 public:
-	ComplexShape(Shape *left, Shape *right, Operation op);
+	ComplexShape(const Shape *left, const Shape *right, const Operation op);
 	~ComplexShape();
 
-	bool isIn(Point *p);
+	bool isIn(const Point &p) const;
 	
 };
 

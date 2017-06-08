@@ -7,13 +7,13 @@
 class Rect : public Shape
 {
 protected:
-	float width;
-	float height;
+	const float width;
+	const float height;
 public:
-	Rect(float w, float h);
+	Rect(const float w, const float h);
 	~Rect();
 
-	bool isIn(Point *p);
+	bool isIn(const Point &p) const;
 
 };
 

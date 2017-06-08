@@ -12,8 +12,8 @@ public:
 	Shape();
 	~Shape();
 	
-	virtual bool isIn(Point *p) = 0;
-	void setPosition(Point p);
+	virtual bool isIn(const Point &p) const = 0;
+	void setPosition(const Point &p);
 };
 
 #endif /* __SHAPE_H__ */

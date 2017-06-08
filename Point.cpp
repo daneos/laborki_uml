@@ -1,6 +1,6 @@
 #include "Point.h"
 
-Point::Point(float x, float y)
+Point::Point(const float x, const float y)
 {
 	this->x = x;
 	this->y = y;
@@ -10,29 +10,29 @@ Point::~Point()
 {
 }
 
-float Point::getX()
+float Point::getX() const
 {
 	return x;
 }
 
-float Point::getY()
+float Point::getY() const
 {
 	return y;
 }
 
-void Point::setX(float x)
+void Point::setX(const float x)
 {
 	this->x = x;
 }
 
-void Point::setY(float y)
+void Point::setY(const float y)
 {
 	this->y = y;
 }
 
-Point Point::translate(Point *p)
+Point Point::translate(const Point &p) const
 {
-	Point t(this->getX() - p->getX(), this->getY() - p->getY());
+	Point t(this->getX() - p.getX(), this->getY() - p.getY());
 	return t;
 
 }

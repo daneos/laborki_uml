@@ -8,7 +8,7 @@ Shape::~Shape()
 {
 }
 
-void Shape::setPosition(Point p)
+void Shape::setPosition(const Point &p)
 {
 	pos = p;
 }

@@ -8,16 +8,16 @@ protected:
 	float y;
 
 public:
-	Point(float x, float y);
+	Point(const float x, const float y);
 	~Point();
 
-	float getX();
-	float getY();
+	float getX() const;
+	float getY() const;
 
-	void setX(float x);
-	void setY(float y);
+	void setX(const float x);
+	void setY(const float y);
 
-	Point translate(Point *p);
+	Point translate(const Point &p) const;
 };
 
 #endif /* __POINT_H__ */

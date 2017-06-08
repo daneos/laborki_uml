@@ -8,12 +8,12 @@
 class Circle : public Shape
 {
 protected:
-	float radius;
+	const float radius;
 public:
-	Circle(float r);
+	Circle(const float r);
 	~Circle();
 
-	bool isIn(Point *p);
+	bool isIn(const Point &p) const;
 };
 
 #endif /* __CIRCLE_H__ */
