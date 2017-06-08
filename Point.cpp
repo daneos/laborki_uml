@@ -28,7 +28,7 @@ void Point::setY(const float y)
 	this->y = y;
 }
 
-Point Point::translate(const Point &p) const
+Point Point::relativeTo(const Point &p) const
 {
 	Point t(this->getX() - p.getX(), this->getY() - p.getY());
 	return t;

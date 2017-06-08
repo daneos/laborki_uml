@@ -10,7 +10,7 @@ ComplexShape::~ComplexShape()
 
 bool ComplexShape::isIn(const Point &p) const
 {
-	Point t = p.translate(this->pos);
+	Point t = p.relativeTo(this->pos);
 
 	if(op == UNION)
 		return left->isIn(t) || right->isIn(t);

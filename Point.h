@@ -17,7 +17,7 @@ public:
 	void setX(const float x);
 	void setY(const float y);
 
-	Point translate(const Point &p) const;
+	Point relativeTo(const Point &p) const;
 };
 
 #endif /* __POINT_H__ */
