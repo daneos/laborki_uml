@@ -1,9 +1,7 @@
 #include "Point.h"
 
-Point::Point(const float x, const float y)
+Point::Point(const float x, const float y) : x(x), y(y)
 {
-	this->x = x;
-	this->y = y;
 }
 
 Point::~Point()

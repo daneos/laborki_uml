@@ -5,7 +5,7 @@
 #include "Rect.h"
 #include "Point.h"
 
-void draw(Shape &s, Point &start, Point &end, int resX, int resY)
+void draw(const Shape &s, const Point &start, const Point &end, const int resX, const int resY)
 {
 	float diffX = (end.getX() - start.getX()) / resX;
 	float diffY = (end.getY() - start.getY()) / resY;
