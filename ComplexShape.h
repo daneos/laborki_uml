@@ -1,18 +1,21 @@
 #if !defined(__COMPLEXSHAPE_H__)
 #define __COMPLEXSHAPE_H__
 
+#include <memory>
 #include "Shape.h"
 #include "Utils.h"
+
+using namespace std;
 
 class ComplexShape : public Shape
 {
 protected:
-	const Shape *left;
-	const Shape *right;
+	const shared_ptr<Shape> left;
+	const shared_ptr<Shape> right;
 	const Operation op;
 
 public:
-	ComplexShape(const Shape *left, const Shape *right, const Operation op);
+	ComplexShape(const shared_ptr<Shape> left, const shared_ptr<Shape> right, const Operation op);
 	~ComplexShape();
 
 	bool isIn(const Point &p) const;

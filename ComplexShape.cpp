@@ -1,6 +1,6 @@
 #include "ComplexShape.h"
 
-ComplexShape::ComplexShape(const Shape *left, const Shape *right, const Operation op) : left(left), right(right), op(op)
+ComplexShape::ComplexShape(const shared_ptr<Shape> left, const shared_ptr<Shape> right, const Operation op) : left(left), right(right), op(op)
 {
 }
 

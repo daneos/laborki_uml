@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #include "ComplexShape.h"
 #include "Circle.h"
 #include "Rect.h"
@@ -31,23 +30,27 @@ int main(int argc, char *argv[])
 {
 	printf("main: arrived\n");
 
-	Circle c(3);
-	Rect r(14, 2);
-	ComplexShape cs(&c, &r, SYMMETRIC_DIFF);
+	auto sun = make_shared<Circle>(3);
+	auto main_box = make_shared<Rect>(10, 10);
+	auto small = make_shared<Rect>(14, 1);
+	auto hole1 = make_shared<Rect>(3, 4);
+	auto hole2 = make_shared<Circle>(1.5);
 
-	Point r_pos(-4, 2);
-	r.setPosition(r_pos);
+	auto hole = make_shared<ComplexShape>(hole1, hole2, UNION);
+	auto main_layout = make_shared<ComplexShape>(main_box, small, UNION);
+	auto full_shape = make_shared<ComplexShape>(main_layout, hole, DIFFERENCE);
+	ComplexShape scene(full_shape, sun, UNION);
 
-	Point c_pos(0, -1);
-	c.setPosition(c_pos);
-
-	Point cs_pos(1, -3);
-	cs.setPosition(cs_pos);
+	small->setPosition(Point(0, 3));
+	hole2->setPosition(Point(0, 2));
+	hole->setPosition(Point(0, -3));
+	full_shape->setPosition(Point(-2, 0));
+	sun->setPosition(Point(10, 5));
 
 	Point start(-10, 5);
 	Point end(10, -5);
 
-	draw(cs, start, end, 40, 20);
+	draw(scene, start, end, 60, 40);
 
 	return 0;
 }
